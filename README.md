@@ -2,6 +2,7 @@
 Python Script for Synchronizing Zendesk articles with Smartling via API
 
 <b>INSTALLATION</b> 
+
 Backup current Zendesk HelpCenter content using existing scripts
 Install prerequisite python libraries. Run terminal and enter commands below. (You’ll need to enter your Mac password.)
 sudo easy_install lxml
@@ -26,6 +27,7 @@ Backup again
 (Later) Remove old CSV files from Smartling project.
 
 <b>NOTES</b>
+
 Be aware of handling of ‘draft’ articles and incomplete translations in Smartling:
 
 Transferring to Smartling:
@@ -48,15 +50,41 @@ Previously transferred content is transferred again with the ‘all’ option. T
 Currently, all hyperlinks containing ‘/en-us/’ in the path are updated to point to the translated version instead. This may need to be refined depending on what sort of links are on the actual articles.
 
 <b>COMMAND-LINE OPTIONS</b>
-Option                      Description
--t, --translate             Transfer source content from ZenDesk to Smartling
--r, --retrievetranslations  Transfer translations from Smartling to Zendesk
--l, --locales               Comma-separated list of Zendesk locales or ‘all’. Applies to the ‘-r’ option.
--a, --articles              Comma-separated list of Zendesk article IDs or ‘all’. 
--c, --categories            Comma-separated list of Zendesk category IDs or ‘all’. 
--s, --sections              Comma-separated list of Zendesk section IDs or ‘all’. 
--y, --retrievaltype         What type of content to pull from Smarling: published, pending, or pseudo (see Smartling online help)
--g, --loglevel              The least-critical level of log messages to include in the log file. Valid values: info, warning, error, critical, debug
+
+Option                      
+
+Description
+-t, --translate             
+
+Transfer source content from ZenDesk to Smartling
+
+-r, --retrievetranslations  
+
+Transfer translations from Smartling to Zendesk
+
+-l, --locales               
+
+Comma-separated list of Zendesk locales or ‘all’. Applies to the ‘-r’ option.
+
+-a, --articles              
+
+Comma-separated list of Zendesk article IDs or ‘all’. 
+
+-c, --categories            
+
+Comma-separated list of Zendesk category IDs or ‘all’. 
+
+-s, --sections              
+
+Comma-separated list of Zendesk section IDs or ‘all’. 
+
+-y, --retrievaltype         
+
+What type of content to pull from Smarling: published, pending, or pseudo (see Smartling online help)
+
+-g, --loglevel              
+
+The least-critical level of log messages to include in the log file. Valid values: info, warning, error, critical, debug
 
 
 <b>SAMPLE USAGE</b>
@@ -112,8 +140,7 @@ es = es-es
 ja = ja
 
 
-translate.cfg
-
+<b>translate.cfg</b>
 
 ; Optional configuration file for the Smartling-Zendesk integration script.
 ; Specifies which articles include/exclude in transfers from Zendesk to Smartling
